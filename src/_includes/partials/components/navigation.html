@@ -1,0 +1,6 @@
+<nav x-data="{ open: false }">
+	<button @click="open = true" :aria-expanded="open.toString()">Menu</button>
+	<ul class="nav" role="list" @click.away="open = false">
+		<li><a href="/"{% if page.url === "/"%} aria-current="page"{% endif %}>Home</a></li>
+	</ul>
+</nav>

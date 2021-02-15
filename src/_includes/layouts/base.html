@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en-ca">
+    <head>
+        <meta charset="utf-8">
+        <title>{{ site.title }}</title>
+        {% include "partials/global/meta.html" %}
+        <link href="/assets{{ assets['/styles/main.css'] }}" rel="stylesheet" />
+		<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
+    </head>
+    <body class="{{ bodyClass if bodyClass else 'page' }}">
+        {% include "partials/global/header.html" %}
+        <main>
+			<article>
+				<header>
+					<h1>{{ title }}</h1>
+				</header>
+				<div class="content">
+					{% block content %}
+					{{ content | safe }}
+					{% endblock %}
+				</div>
+			</article>
+        </main>
+        {% include "partials/global/footer.html" %}
+        <script src="/assets{{ assets['/scripts/main.js'] }}" defer></script>
+		{% if page.url === "/" %}
+		<script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
+		{% endif %}
+    </body>
+</html>

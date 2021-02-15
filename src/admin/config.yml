@@ -1,0 +1,37 @@
+backend:
+  name: git-gateway
+  branch: main
+media_folder: "src/assets/images/uploads"
+public_folder: "/assets/images/uploads"
+
+# Run "npx netlify-cms-proxy-server" for local backend
+local_backend: true
+collections:
+  - label: "Posts"
+    label_singular: "Post"
+    name: "post"
+    folder: "src/collections/posts/"
+    extension: "md"
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Publication Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - label: "Pages"
+    label_singular: "Page"
+    name: "page"
+    folder: "src/collections/pages/"
+    extension: "md"
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Publication Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
