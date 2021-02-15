@@ -4,7 +4,7 @@
 
 ## License
 
-Keel is released under a [BSD 3-Clause](LICENSE.md) license and includes code from other projects, categorized by license:
+Keel is released under an [MIT](LICENSE.md) license and includes code from other projects, categorized by license:
 
 ### MIT
 
