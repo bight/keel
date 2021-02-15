@@ -22,10 +22,9 @@
   },
   "keywords": [
     "eleventy",
-    "starter",
-    "kit",
-    "static",
-    "site"
+		"netlify cms",
+    "starter kit",
+    "static site"
   ],
   "author": "Ned Zimmerman <ned@bight.dev>",
   "license": "MIT",
