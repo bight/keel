@@ -2,6 +2,8 @@
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/bight/keel&stack=cms)
 
+Keel is an [Eleventy](https://11ty.dev) starter kit used for all new Bight projects.
+
 ## License
 
 Keel is released under an [MIT](LICENSE.md) license and includes code from other projects, categorized by license:
