@@ -1,0 +1,30 @@
+
+name: CI
+
+on:
+  pull_request:
+    branches: [ main ]
+
+  push:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Cache node modules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: ${{ runner.OS }}-build-${{ hashFiles('**/package-lock.json') }}
+      - name: Install dependencies
+        run: npm i
+        env:
+          CI: true
+      - name: Lint JavaScript and Sass files
+        run: npm run lint
+        env:
+          CI: true
+      - name: Run test build
+        run: npm run build
