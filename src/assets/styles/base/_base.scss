@@ -1,0 +1,15 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+body > * {
+	padding-inline: calc((100vw - 70ch) / 2);
+}
+
+a {
+	text-decoration: underline;
+}
+
+a[aria-current='page'] {
+	text-decoration-style: double;
+}

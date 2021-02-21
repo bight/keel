@@ -1,22 +1,39 @@
-@import '~modern-css-reset';
+@charset "UTF-8";
 
-body {
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
+// 1. Configuration and helpers
+@import
+	'abstracts/variables',
+	'abstracts/functions',
+	'abstracts/mixins';
 
-ol[role='list'],
-ul[role='list'] {
-	padding-inline-start: 0;
-}
+// 2. Vendors
+@import
+	'~modern-css-reset';
 
-@media (max-width: 768px) {
-	nav [aria-expanded='false'] + * {
-		display: none;
-	}
-}
+// 3. Base stuff
+@import
+	'base/base',
+	'base/fonts',
+	'base/typography',
+	'base/helpers';
 
-@media (min-width: 768px) {
-	nav [aria-expanded] {
-		display: none;
-	}
-}
+// 4. Structural elements
+@import
+	'structure/header',
+	'structure/main',
+	'structure/footer';
+
+// 5. Components
+@import
+	'components/button',
+	'components/navigation';
+
+// 6. Layout-specific styles
+@import
+	'layouts/home',
+	'layouts/post';
+
+// 7. Themes
+@import
+	'themes/dark',
+	'themes/light';
