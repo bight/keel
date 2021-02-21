@@ -1,27 +1,21 @@
 <!doctype html>
-<html lang="en-ca">
+<html lang="en-ca" dir="ltr" class="no-js">
     <head>
         <meta charset="utf-8">
         <title>{{ site.title }}</title>
-        {% include "partials/global/meta.html" %}
+        {% include "partials/global/meta.njk" %}
         <link href="/assets{{ assets['/styles/main.css'] }}" rel="stylesheet" />
+		<script>document.documentElement.classList.remove('no-js');</script>
 		<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
     </head>
     <body class="{{ bodyClass if bodyClass else 'page' }}">
-        {% include "partials/global/header.html" %}
+        {% include "partials/global/header.njk" %}
         <main>
-			<article>
-				<header>
-					<h1>{{ title }}</h1>
-				</header>
-				<div class="content">
-					{% block content %}
-					{{ content | safe }}
-					{% endblock %}
-				</div>
-			</article>
+			{% block content %}
+			{{ content | safe }}
+			{% endblock %}
         </main>
-        {% include "partials/global/footer.html" %}
+        {% include "partials/global/footer.njk" %}
         <script src="/assets{{ assets['/scripts/main.js'] }}" defer></script>
 		{% if page.url === "/" %}
 		<script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>

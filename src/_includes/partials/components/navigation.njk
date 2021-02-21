@@ -1,0 +1,10 @@
+{% set navItems = collections.all | eleventyNavigation %}
+
+<nav x-data="{ open: false }">
+	<button @click="open = true" :aria-expanded="open.toString()">Menu</button>
+	<ul role="list" @click.away="open = false">
+		{% for item in navItems %}
+		<li><a href="{{ item.url | url }}"{% if page.url === item.url %} aria-current="page"{% endif %}>{{ item.key }}</a></li>
+		{% endfor %}
+	</ul>
+</nav>

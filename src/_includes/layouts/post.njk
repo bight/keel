@@ -1,0 +1,16 @@
+{% extends "layouts/base.njk" %}
+
+{% set bodyClass = "post" %}
+
+{% block content %}
+<article class="h-entry">
+	<header>
+		<h1>{{ title }}</h1>
+		<p>By <span class="p-author h-card">{{ author }}</p>
+		<p><time class="dt-published" datetime="{{ date.toISOString() }}">{{ date | formatDate }}</time></p>
+	</header>
+	<div class="e-content">
+		{{ content | safe }}
+	</div>
+</article>
+{% endblock %}

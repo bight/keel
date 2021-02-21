@@ -1,6 +1,8 @@
 ---
 title: Keel
+layout: layouts/page
 permalink: /
-layout: layouts/base
+eleventyNavigation:
+  key: Home
 ---
 Well hello there!
