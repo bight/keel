@@ -54,6 +54,6 @@
     "stylelint-config-xo-scss": "^0.14.0",
     "stylelint-order": "^4.1.0",
     "webpack": "^5.24.2",
-    "xo": "^0.37.1"
+    "xo": "^0.38.2"
   }
 }
