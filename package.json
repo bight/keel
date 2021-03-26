@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/bight/keel#readme",
   "dependencies": {
-    "alpinejs": "^2.8.0",
+    "alpinejs": "^2.8.2",
     "modern-css-reset": "^1.4.0"
   },
   "devDependencies": {
