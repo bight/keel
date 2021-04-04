@@ -1,4 +1,8 @@
+{% if previewMode %}
+{% extends "layouts/preview.njk" %}
+{% else %}
 {% extends "layouts/base.njk" %}
+{% endif %}
 
 {% set bodyClass = "post" %}
 
@@ -7,7 +11,7 @@
 	<header>
 		<h1>{{ title }}</h1>
 		<p>By <span class="p-author h-card">{{ author }}</p>
-		<p><time class="dt-published" datetime="{{ date.toISOString() }}">{{ date | formatDate }}</time></p>
+		<p><time class="dt-published" datetime="{{ date | isoDate }}">{{ date | formatDate }}</time></p>
 	</header>
 	<div class="e-content">
 		{{ content | safe }}

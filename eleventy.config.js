@@ -1,21 +1,27 @@
 const fs = require('fs');
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 
-const formateDateFilter = require('./src/filters/format-date.js');
+const formatDateFilter = require('./src/filters/format-date.js');
+const isoDateFilter = require('./src/filters/iso-date.js');
 const markdownFilter = require('./src/filters/markdown.js');
 const minifyTransform = require('./src/transforms/minify.js');
+const parseTransform = require('./src/transforms/parse.js');
 const slugFilter = require('./src/filters/slug.js');
 
 module.exports = function (config) {
 	config.addFilter('markdown', markdownFilter);
 	config.addFilter('slug', slugFilter);
-	config.addFilter('formatDate', formateDateFilter);
+	config.addFilter('formatDate', formatDateFilter);
+	config.addFilter('isoDate', isoDateFilter);
 
 	config.addPlugin(eleventyNavigationPlugin);
 
 	config.addTransform('minify', minifyTransform);
+	config.addTransform('parse', parseTransform);
 
-	config.addPassthroughCopy('./src/admin');
+	config.addWatchTarget('./src/assets');
+
+	config.addPassthroughCopy('./src/admin/config.yml');
 	config.addPassthroughCopy('./src/assets/fonts');
 	config.addPassthroughCopy('./src/assets/images');
 

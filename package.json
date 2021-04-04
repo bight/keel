@@ -5,16 +5,19 @@
   "main": ".eleventy.js",
   "scripts": {
     "build": "run-s -l clean build:*",
-    "build:assets": "mix --production",
     "build:site": "cross-env NODE_ENV=production eleventy --config=eleventy.config.js",
+    "build:scripts": "./build-scripts.js",
+    "build:styles": "sass --style=compressed --no-source-map src/assets/styles/main.scss dist/assets/styles/main.css",
     "clean": "rimraf dist/*",
     "lint": "run-s lint:*",
     "lint:scripts": "xo",
     "lint:styles": "stylelint **/*.scss",
     "start": "npm-run-all -l clean -p watch:*",
     "test": "run-s lint:*",
-    "watch:assets": "mix watch",
-    "watch:site": "cross-env NODE_ENV=development eleventy --config=eleventy.config.js start --serve"
+    "watch:cms": "npx netlify-cms-proxy-server",
+    "watch:site": "cross-env NODE_ENV=development eleventy --config=eleventy.config.js start --serve",
+    "watch:styles": "sass --watch src/assets/styles/main.scss dist/assets/styles/main.css",
+    "watch:scripts": "./build-scripts.js -watch -sourcemap"
   },
   "repository": {
     "type": "git",
@@ -33,27 +36,22 @@
   },
   "homepage": "https://github.com/bight/keel#readme",
   "dependencies": {
-    "alpinejs": "^2.8.2",
     "modern-css-reset": "^1.4.0"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
     "@11ty/eleventy-navigation": "^0.1.6",
     "cross-env": "^7.0.3",
+    "estrella": "^1.4.0",
     "html-minifier": "^4.0.0",
-    "laravel-mix": "^6.0.13",
+    "linkedom": "^0.6.2",
     "markdown-it": "^12.0.4",
-    "memory-fs": "^0.5.0",
-    "move-file": "^2.0.0",
     "npm-run-all": "^4.1.5",
-    "postcss": "^8.2.9",
     "rimraf": "^3.0.2",
     "sass": "^1.32.8",
-    "sass-loader": "^11.0.1",
     "stylelint": "^13.12.0",
     "stylelint-config-xo-scss": "^0.14.0",
     "stylelint-order": "^4.1.0",
-    "webpack": "^5.28.0",
     "xo": "^0.38.2"
   }
 }

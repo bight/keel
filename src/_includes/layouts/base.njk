@@ -4,9 +4,9 @@
         <meta charset="utf-8">
         <title>{{ site.title }}</title>
         {% include "partials/global/meta.njk" %}
-        <link href="/assets{{ assets['/styles/main.css'] }}" rel="stylesheet" />
+        <link href="/assets/styles/main.css" rel="stylesheet" />
 		<script>document.documentElement.classList.remove('no-js');</script>
-		<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.2/alpine.js" integrity="sha512-No22QdEJ4zlXvdQDpm6oeXcjwajpNxvnstx6NEU/5qZFysa5gsgj/bSfAFpSc9Za5LjbgQLRXyCeY53aWmk8ZA==" crossorigin="anonymous"></script>
     </head>
     <body class="{{ bodyClass if bodyClass else 'page' }}">
         {% include "partials/global/header.njk" %}
@@ -16,7 +16,7 @@
 			{% endblock %}
         </main>
         {% include "partials/global/footer.njk" %}
-        <script src="/assets{{ assets['/scripts/main.js'] }}" defer></script>
+        <script src="/assets/scripts/main.js" defer></script>
 		{% if page.url === "/" %}
 		<script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
 		{% endif %}
