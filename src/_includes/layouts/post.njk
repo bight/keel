@@ -1,4 +1,8 @@
+{% if preview %}
+{% extends "layouts/preview.njk" %}
+{% else %}
 {% extends "layouts/base.njk" %}
+{% endif %}
 
 {% set bodyClass = "post" %}
 

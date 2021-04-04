@@ -15,6 +15,8 @@ module.exports = function (config) {
 
 	config.addTransform('minify', minifyTransform);
 
+	config.addWatchTarget('./src/assets');
+
 	config.addPassthroughCopy('./src/admin');
 	config.addPassthroughCopy('./src/assets/fonts');
 	config.addPassthroughCopy('./src/assets/images');
