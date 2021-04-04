@@ -5,6 +5,7 @@ const formatDateFilter = require('./src/filters/format-date.js');
 const isoDateFilter = require('./src/filters/iso-date.js');
 const markdownFilter = require('./src/filters/markdown.js');
 const minifyTransform = require('./src/transforms/minify.js');
+const parseTransform = require('./src/transforms/parse.js');
 const slugFilter = require('./src/filters/slug.js');
 
 module.exports = function (config) {
@@ -16,6 +17,7 @@ module.exports = function (config) {
 	config.addPlugin(eleventyNavigationPlugin);
 
 	config.addTransform('minify', minifyTransform);
+	config.addTransform('parse', parseTransform);
 
 	config.addWatchTarget('./src/assets');
 
