@@ -1,12 +1,14 @@
 /* global CMS, nunjucks, PropTypes */
 
 import formatDateFilter from '../filters/format-date.js';
+import isoDateFilter from '../filters/iso-date.js';
 import markdownFilter from '../filters/markdown.js';
 import slugFilter from '../filters/slug.js';
 
 const env = nunjucks.configure();
 
-env.addFilter('dateFilter', formatDateFilter);
+env.addFilter('formatDate', formatDateFilter);
+env.addFilter('isoDate', isoDateFilter);
 env.addFilter('markdown', markdownFilter);
 env.addFilter('slug', slugFilter);
 
@@ -23,6 +25,22 @@ Preview.propTypes = {
 };
 
 CMS.registerPreviewStyle('/assets/styles/main.css');
+
+const Page = ({entry}) => (
+	<Preview
+		entry={entry}
+		path="layouts/page.njk"
+		context={({title, body}) => ({
+			previewMode: true,
+			title,
+			content: markdownFilter(body || '')
+		})}
+	/>
+);
+
+Page.propTypes = {
+	entry: PropTypes.object.isRequired
+};
 
 const Post = ({entry}) => (
 	<Preview
@@ -42,4 +60,5 @@ Post.propTypes = {
 	entry: PropTypes.object.isRequired
 };
 
-CMS.registerPreviewTemplate('posts', Post);
+CMS.registerPreviewTemplate('page', Page);
+CMS.registerPreviewTemplate('post', Post);

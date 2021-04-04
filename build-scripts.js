@@ -6,3 +6,10 @@ build({
 	outfile: './dist/assets/scripts/main.js',
 	bundle: true
 });
+
+build({
+	entry: './src/admin/admin.js',
+	outfile: './dist/admin/admin.js',
+	bundle: true,
+	loader: {'.js': 'jsx'}
+});
