@@ -54,7 +54,7 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
-    "@11ty/eleventy-navigation": "^0.1.6",
+    "@11ty/eleventy-navigation": "^0.2.0",
     "@commitlint/cli": "^12.1.1",
     "@commitlint/config-conventional": "^12.1.1",
     "cross-env": "^7.0.3",
