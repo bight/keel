@@ -17,7 +17,8 @@
     "watch:cms": "npx netlify-cms-proxy-server",
     "watch:site": "cross-env NODE_ENV=development eleventy --config=eleventy.config.js start --serve",
     "watch:styles": "sass --watch src/assets/styles/main.scss dist/assets/styles/main.css",
-    "watch:scripts": "./build-scripts.js -watch -sourcemap"
+    "watch:scripts": "./build-scripts.js -watch -sourcemap",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -35,12 +36,6 @@
     "url": "https://github.com/bight/keel/issues"
   },
   "homepage": "https://github.com/bight/keel#readme",
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
   "lint-staged": {
     "*.scss": [
       "stylelint"
@@ -60,7 +55,7 @@
     "cross-env": "^7.0.3",
     "estrella": "^1.4.1",
     "html-minifier": "^4.0.0",
-    "husky": "^7.0.4",
+    "husky": "^7.0.0",
     "linkedom": "^0.13.0",
     "lint-staged": "^12.1.2",
     "markdown-it": "^12.3.0",
