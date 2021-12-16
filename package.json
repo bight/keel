@@ -65,6 +65,6 @@
     "stylelint": "^13.13.1",
     "stylelint-config-xo-scss": "^0.14.0",
     "stylelint-order": "^4.1.0",
-    "xo": "^0.38.2"
+    "xo": "^0.47.0"
   }
 }
