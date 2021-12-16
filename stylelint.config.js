@@ -4,9 +4,9 @@ module.exports = {
 	rules: {
 		'order/order': [
 			'custom-properties',
-			'declarations'
+			'declarations',
 		],
 		'order/properties-alphabetical-order': true,
-		'selector-max-universal': 2
-	}
+		'selector-max-universal': 2,
+	},
 };

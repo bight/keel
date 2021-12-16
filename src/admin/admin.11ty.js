@@ -1,11 +1,11 @@
-const nunjucks = require('nunjucks');
 const path = require('path');
+const nunjucks = require('nunjucks');
 
 module.exports = class {
 	async data() {
 		return {
 			permalink: '/admin/templates.js',
-			eleventyExcludeFromCollections: true
+			eleventyExcludeFromCollections: true,
 		};
 	}
 
@@ -18,9 +18,9 @@ module.exports = class {
 						'preview.njk',
 						'post.njk',
 						'page.njk',
-						'\\.svg$'
-					]
-				}
+						'\\.svg$',
+					],
+				},
 			);
 			if (templates) {
 				resolve(templates);

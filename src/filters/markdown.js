@@ -4,7 +4,7 @@ module.exports = value => {
 	const md = new MarkdownIt({
 		html: true,
 		breaks: true,
-		linkify: true
+		linkify: true,
 	});
 
 	return md.render(value);

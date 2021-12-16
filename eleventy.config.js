@@ -28,11 +28,9 @@ module.exports = function (config) {
 	const now = new Date();
 	const livePosts = post => post.date <= now && !post.data.draft;
 
-	config.addCollection('posts', collection => {
-		return [
-			...collection.getFilteredByGlob('./src/collections/posts/*.md').filter(post => livePosts(post))
-		].reverse();
-	});
+	config.addCollection('posts', collection => [
+		...collection.getFilteredByGlob('./src/collections/posts/*.md').filter(post => livePosts(post)),
+	].reverse());
 
 	config.setBrowserSyncConfig({
 		callbacks: {
@@ -43,14 +41,14 @@ module.exports = function (config) {
 					response.write(content);
 					response.end();
 				});
-			}
-		}
+			},
+		},
 	});
 
 	return {
 		dir: {
 			input: 'src',
-			output: 'dist'
-		}
+			output: 'dist',
+		},
 	};
 };

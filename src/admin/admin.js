@@ -21,7 +21,7 @@ const Preview = ({entry, path, context}) => {
 Preview.propTypes = {
 	entry: PropTypes.object.isRequired,
 	path: PropTypes.string.isRequired,
-	context: PropTypes.func.isRequired
+	context: PropTypes.func.isRequired,
 };
 
 CMS.registerPreviewStyle('/assets/styles/main.css');
@@ -33,13 +33,13 @@ const Page = ({entry}) => (
 		context={({title, body}) => ({
 			previewMode: true,
 			title,
-			content: markdownFilter(body || '')
+			content: markdownFilter(body || ''),
 		})}
 	/>
 );
 
 Page.propTypes = {
-	entry: PropTypes.object.isRequired
+	entry: PropTypes.object.isRequired,
 };
 
 const Post = ({entry}) => (
@@ -51,13 +51,13 @@ const Post = ({entry}) => (
 			title,
 			author,
 			date,
-			content: markdownFilter(body || '')
+			content: markdownFilter(body || ''),
 		})}
 	/>
 );
 
 Post.propTypes = {
-	entry: PropTypes.object.isRequired
+	entry: PropTypes.object.isRequired,
 };
 
 CMS.registerPreviewTemplate('page', Page);
