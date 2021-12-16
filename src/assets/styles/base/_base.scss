@@ -3,13 +3,13 @@
 // -----------------------------------------------------------------------------
 
 body > * {
-	padding-inline: calc((100vw - 70ch) / 2);
+  padding-inline: calc((100vw - 70ch) / 2);
 }
 
 a {
-	text-decoration: underline;
+  text-decoration: underline;
 }
 
-a[aria-current='page'] {
-	text-decoration-style: double;
+a[aria-current="page"] {
+  text-decoration-style: double;
 }

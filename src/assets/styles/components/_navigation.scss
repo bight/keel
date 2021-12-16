@@ -2,36 +2,36 @@
 // This file contains all styles related to the navigation component.
 // -----------------------------------------------------------------------------
 nav ul {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 nav a {
-	display: block;
-	padding: 0.5rem;
+  display: block;
+  padding: 0.5rem;
 }
 
 @media (max-width: 768px) {
-	nav [aria-expanded='false'] + * {
-		display: none;
-	}
+  nav [aria-expanded="false"] + * {
+    display: none;
+  }
 }
 
 @media (min-width: 768px) {
-	nav [aria-expanded] {
-		display: none;
-	}
+  nav [aria-expanded] {
+    display: none;
+  }
 
-	nav ul {
-		flex-direction: row;
-	}
+  nav ul {
+    flex-direction: row;
+  }
 
-	nav li + li {
-		margin-inline-start: 1rem;
-	}
+  nav li + li {
+    margin-inline-start: 1rem;
+  }
 
-	nav a {
-		display: block;
-		padding: 0;
-	}
+  nav a {
+    display: block;
+    padding: 0;
+  }
 }

@@ -2,38 +2,38 @@
 
 // 1. Configuration and helpers
 @import
-	'abstracts/variables',
-	'abstracts/functions',
-	'abstracts/mixins';
+  "abstracts/variables",
+  "abstracts/functions",
+  "abstracts/mixins";
 
 // 2. Vendors
 @import
-	'../../../node_modules/modern-css-reset/src/reset';
+  "../../../node_modules/modern-css-reset/src/reset";
 
 // 3. Base stuff
 @import
-	'base/base',
-	'base/fonts',
-	'base/typography',
-	'base/helpers';
+  "base/base",
+  "base/fonts",
+  "base/typography",
+  "base/helpers";
 
 // 4. Structural elements
 @import
-	'structure/header',
-	'structure/main',
-	'structure/footer';
+  "structure/header",
+  "structure/main",
+  "structure/footer";
 
 // 5. Components
 @import
-	'components/button',
-	'components/navigation';
+  "components/button",
+  "components/navigation";
 
 // 6. Layout-specific styles
 @import
-	'layouts/home',
-	'layouts/post';
+  "layouts/home",
+  "layouts/post";
 
 // 7. Themes
 @import
-	'themes/dark',
-	'themes/light';
+  "themes/dark",
+  "themes/light";
